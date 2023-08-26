@@ -1,0 +1,62 @@
+{
+	"info": {
+		"_postman_id": "3f7a6283-5deb-4a5c-b606-c601a7fb52bd",
+		"name": "Examen3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25386261"
+	},
+	"item": [
+		{
+			"name": "Get branches",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9003/api/v1/branches",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9003",
+					"path": [
+						"api",
+						"v1",
+						"branches"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post branch",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"123\",\r\n    \"code\":\"123\",\r\n    \"name\":\"Branch1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9005/api/v1/branches/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9005",
+					"path": [
+						"api",
+						"v1",
+						"branches",
+						"create"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
