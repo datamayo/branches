@@ -1,0 +1,30 @@
+version: '3'
+services:
+  mongo-branch:
+    image: mongo:latest
+    container_name: mongo-branch
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: admin123
+    ports:
+      - 27017:27017
+  branchapp:
+    image: branchapp:0.1
+    depends_on:
+      - mongo-branch
+    container_name: branchapp
+    environment:
+      - SERVER_PORT=9005
+    ports:
+      - 9005:9005
+    build: .
+  branchapp-2:
+    image: branchapp:0.1
+    depends_on:
+      - mongo-branch
+    container_name: branchapp-2
+    environment:
+      - SERVER_PORT=9004
+    ports:
+      - 9003:9004
+    build: .
